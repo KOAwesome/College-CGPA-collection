@@ -12,3 +12,10 @@ store for a long time
 - If you have not already made a list of roll numbers you can use regex to do that. 
 - By default we use to create a new excel sheet
 - Download your browser web drivers. I will leave a link here.
+
+**Example page**
+This is how our college page looks like.
+  <img width="1438" alt="sample_page" src="https://github.com/KOAwesome/College-CGPA-collection/assets/99417716/2352f2ac-5660-408e-8469-dad18995afca">
+On providing inputs, 
+
+<img width="1438" alt="table" src="https://github.com/KOAwesome/College-CGPA-collection/assets/99417716/52f0a083-ebbc-4396-b6e2-62afefc9027d">
