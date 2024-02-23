@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html ng-app="myApp" id="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MREC Academics</title>
+		<link href="/Content/css?v=sKdF8DUkbThZW5tt7C1kZv2Sfa5T_S1GiMR0l6FZRBw1" rel="stylesheet"/>
+		<script src="/bundles/modernizr?v=w9fZKPSiHtN4N4FRqV7jn-3kGoQY5hHpkwFv5TfMrus1"></script>
+		<link type="text/css" href="/Content/styles.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body >
+		<div class=" " style="background-color:rgba(10, 13, 47, 1) !important;">
+			<div class="" style="margin:2px">
+				<div class="row" style="background-color: rgba(10, 13, 47,1)">
+					<div class="col-md-3" style="background-color:rgba(10, 13, 47,1);">
+						<div class="row">
+							<div class="col-md-2 col-xs-2">
+								<div class="logoimg" style="display:inline">
+									<img src="/img/MREC_logo.png" class="logoimg" style="width:70px; " />
+								</div>
+							</div>
+							<div class="col-md-10 col-xs-10">
+								<div style="vertical-align:middle" class="logohtitle">
+									<div style="font-weight:bold; color:white;vertical-align:middle;padding-top:15px">
+										MALLA REDDY ENGINEERING COLLEGE
+									</div>
+									<div style="color:white">
+										Autonomous Institution
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-9"
+						style="margin-top: 0px; margin-bottom: 0px; border-left: 25px solid transparent; border-right: 0px solid transparent; height: 0; border-bottom: 75px solid #aaeaf3;padding:0px">
+						<div style="margin-top: 0px; margin-bottom: 0px; border-left: 25px solid transparent; border-right: 0px solid transparent; height: 0; border-bottom: 75px solid #08365a;margin-left:-15px">
+							<div class="logotitle" style="padding-top:5px;padding-bottom:5px; padding-right:0;padding-left:0px">
+								<div class="subtitle2">
+									<div style="color:white;font-weight:bold; display:inline">
+										Approved by AICTE & Affiliated to JNTU Hyderabad
+									</div>
+									<div style="display: inline">
+										<span style="color:#aaeaf3">Re-accredited by NAAC with “A++” Grade (III&ndash;Cycle) </span>
+									</div>
+									<div style="display: inline">
+										<span style="color: orange; font-weight: bold">Accredited by NBA</span>
+									</div>
+								</div>
+							</div>
+							<div style="clear:both"></div>
+							<div class="row" style="margin-top:0px !important; float:right;margin-right:5px; text-align:center">
+								<div style="display:inline-block; vertical-align:middle">
+								</div>
+							</div>
+							<div style="text-align:right; margin-top:5px; display:inline; float:right; margin-right:25px;">
+								<span style="color:white; font-weight:bold">
+								MREC Results Dashboard
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav" style="width:50%">
+						<!--<li>Html.ActionLink("Home", "Index", "Home")</li>-->
+						<!-- <li>Html.ActionLink("Upload", "Upload", "Home")</li>-->
+						<!--<li>Html.ActionLink("AddQuestion", "AddQuestionImg", "Home")</li>-->
+						<!--<li>Html.ActionLink("ViewQuestions", "ViewQuestions", "Home")</li>-->
+						<!-- <li>Html.ActionLink("GenerateQuestionPaper", "GenerateQuestionPaper", "Home")</li>-->
+					</ul>
+					<div class="row" style="border:0px solid black; background-color:white; font-size:13px">
+						<div class="col-md-12" style="margin-top: 5px">
+							<div class="col-md-12" style=" margin:0px auto; text-align:left;background-color:green; padding-top:5px; padding-bottom:5px; padding-left:5px; padding-right:5px">
+								<div style="display:inline">
+									<ul class="nav nav-tabs" style="margin-top:0px; border-bottom:0px">
+										<li class="active">
+											<a data-toggle="tab" href="#message" style="background-color:transparent; color:white">
+											New Message
+											</a>
+										</li>
+										<li>
+											<a href="/Faculty/Support?RedirectAction=ViewAllMessages" style="background-color:transparent; color:white">
+											All Messages
+											<span style="background-color:white; color:black;
+												padding:2px 5px; border-radius:5px; font-size:12px" id="MessageCount">
+											0
+											</span>
+											</a>
+										</li>
+										<li>
+											<a data-toggle="tab" href="#querysupport" style="background-color:transparent; color:white">
+											Query Support Messages
+											</a>
+										</li>
+										<li>
+											<a href="/Faculty/Support?RedirectAction=ViewQueryStatus" style="background-color:transparent; color:white">
+											View All Query Messages
+											<span style="background-color:white; color:black;
+												padding:2px 5px; border-radius:5px; font-size:12px" id="QMessageCount">
+											0
+											</span>
+											</a>
+										</li>
+									</ul>
+									<div class="tab-content" style="border:1px solid white; padding:2px">
+										<div id="message" class="tab-pane fade in active">
+											<table style="width:100%" class="no-border">
+												<tr style="background-color:#f5f5d6">
+													<td style="width:100%; height:50px; padding:5px 8px" valign="top">
+														<p style="color:blue; font-weight:bold; text-align:justify; margin:0px" id="Message"></p>
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div id="querysupport" class="tab-pane fade in">
+											<table style="width:100%" class="no-border">
+												<tr>
+													<td style="width:100%; height:50px; padding:5px 8px" valign="top">
+														<p style="color:white; font-weight:bold; text-align:justify; margin:0px" id="QMessage"></p>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid body-content">
+			<script src="/bundles/jquery?v=Lq-mwR2WxytsApERwplmosKO-6jjiaUhMFoDxnaT8rY1"></script>
+			<script src="/bundles/bootstrap?v=Rc0g6GDBha0U2Ue5txisObdTUK1i4R1sOhOsbTe7GyM1"></script>
+			<!-- Bootstrap stylesheet min version -->
+			<script src="/bundles/jquery?v=Lq-mwR2WxytsApERwplmosKO-6jjiaUhMFoDxnaT8rY1"></script>
+			<script src="/bundles/bootstrap?v=Rc0g6GDBha0U2Ue5txisObdTUK1i4R1sOhOsbTe7GyM1"></script>
+			<script>
+				Number.prototype.roundTo = function (decimal) {
+				
+				    return +(Math.round(this + "e+" + decimal) + "e-" + decimal);
+				
+				}
+			</script>
+			<style>
+				.blinking {
+				font-size: 12px;
+				font-weight: bold;
+				animation: blinkingText 1.2s infinite;
+				}
+				.table td {
+				border: 1px solid blue !important;
+				}
+			</style>
+			<div class="row" style=" margin-top:0px;">
+				<div class="col-md-12">
+					<div class="row" style="background-color:darkorange;padding-bottom:10px">
+					</div>
+				</div>
+			</div>
+			<h4 style="text-align:center; margin-top:15px; font-weight:bold; color:darkblue">
+				IV B.TECH  I SEM REGULAR EXAMINATION (MR20-2020-21 BATCH), Dec23/Jan24. - DEC&nbsp;2023             RESULTS
+			</h4>
+			<form action="/StudentResult/Index?Id=416&amp;ex76brs22fbmm=5218ApbX8rAYg3h1ef" method="post">
+				<input name="__RequestVerificationToken" type="hidden" value="2cQ-E2NM9-V2ogPpvLfVvUAUPZWKXAgRbspyVYrgnN6DJJxQeTwhBsa2EWdW78CpHkyEqxhilRcpMKGY_tSmXPkR1Lo1" />        
+				<div class="row">
+					<div class="col-md-12" style="margin:5px auto; float:none">
+						<div class="row">
+							<div class="col-md-3" style="margin:5px auto; float:none; text-align:center">
+								<label>
+								Enter Hall Ticket No
+								</label>
+								<input type="text" name="HallTicketNo" class="form-control" style="border:1px solid darkblue; text-align:center" value="20j41a6946" />
+								<input type="hidden" name="ExamId" value="416" />
+								<input type="hidden" name="t" value="0" />
+								<input type="hidden" name="Key" value="5218ApbX8rAYg3h1ef" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3" style="margin:5px auto; float:none; text-align:center">
+								<input type="submit" value="Search Result" class="btn btn-danger" style="border:1px solid darkblue" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="row">
+				<div class="col-md-12" style="margin:5px auto; float:none">
+					<script src="/bundles/jquery?v=Lq-mwR2WxytsApERwplmosKO-6jjiaUhMFoDxnaT8rY1"></script>
+					<script src="/bundles/bootstrap?v=Rc0g6GDBha0U2Ue5txisObdTUK1i4R1sOhOsbTe7GyM1"></script>
+					<!-- Bootstrap stylesheet min version -->
+					<script src="/bundles/jquery?v=Lq-mwR2WxytsApERwplmosKO-6jjiaUhMFoDxnaT8rY1"></script>
+					<script src="/bundles/bootstrap?v=Rc0g6GDBha0U2Ue5txisObdTUK1i4R1sOhOsbTe7GyM1"></script>
+					<style>
+						td.resultcell {
+						background-color: #c1f9c1 !important
+						}
+						td.lightgrey {
+						background-color: lightgrey !important
+						}
+						td.lightbrown {
+						background-color: #cde6ad !important
+						}
+						.failed td {
+						background-color: #efc0c0 !important
+						}
+						th {
+						background-color: white !important;
+						color: black;
+						border: 1px solid black;
+						}
+						.headerlabels th {
+						background-color: #137878 !important;
+						color: white;
+						}
+					</style>
+					<div style="text-align:center; margin-top:15px">
+						<span style="color:darkblue; font-weight:bold"> HTNO:</span>  <span style="color:#851fd0; font-weight:bold"> 20J41A6946 </span>- <span style="color:darkblue; font-weight:bold"> Student Name: </span>  <span style="color:#851fd0; font-weight:bold">SAI RAHUL NALLANDHIGHAL </span>
+					</div>
+					<div style="text-align:center">
+						<span style="color:darkblue; font-weight:bold"> Department:</span> Computer Science and  Engineering(IOT)
+					</div>
+					<div style="width:75%; margin:0px auto">
+						<div class="table-responsive">
+							<table align="center" style="margin-top:10px">
+								<tr>
+									<td style="font-weight:bold; text-align:center" colspan="4">
+										Overall Marks
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Marks Obtained:
+									</td>
+									<td id="marksobtained_20J41A6946">
+									</td>
+									<td>
+										CGPA:
+									</td>
+									<td id="cgpa_20J41A6946">
+										8.3
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Credits Obtained:
+									</td>
+									<td id="creditsobtained_20J41A6946">
+									</td>
+									<td>
+										Subject Due:
+									</td>
+									<td id="subjectdue_20J41A6946">
+									</td>
+								</tr>
+							</table>
+							<table align="center" style="width:100%; margin-top:5px">
+								<tr>
+									<th style="text-align:center" colspan="12">
+										SEMESTER - 
+									</th>
+								</tr>
+								<tr class="headerlabels">
+									<th style="width:1%;text-align:center">
+										S.No
+									</th>
+									<th style="width:7%;text-align:center">
+										Code
+									</th>
+									<th style="text-align:center">
+										Subject
+									</th>
+									<th style="text-align: center" colspan="2">
+										CIE*
+									</th>
+									<th style="text-align: center" colspan="2">
+										SEE*
+									</th>
+									<th style="width: 5%; text-align: center">
+										CIE+SEE
+									</th>
+									<th style="text-align: center" colspan="2">
+										Credits
+									</th>
+									<th style="text-align: center" colspan="2">
+										FINAL RESULT
+									</th>
+								</tr>
+								<tr>
+									<th style="width:1%;text-align:center">
+									</th>
+									<th style="width:7%;text-align:center">
+									</th>
+									<th style="text-align:center">
+									</th>
+									<th style="width:5%; text-align: center">
+										Max. Marks
+									</th>
+									<th style="width:5%; text-align: center">
+										Marks Obtained
+									</th>
+									<th style="width: 5%; text-align: center">
+										Max. Marks
+									</th>
+									<th style="width: 5%; text-align: center">
+										Marks Obtained
+									</th>
+									<th style="width: 5%; text-align: center">
+										Total
+									</th>
+									<th style="width: 5%; text-align: center">
+										Registered
+									</th>
+									<th style="width: 5%; text-align: center">
+										Obtained
+									</th>
+									<th style="width: 5%; text-align: center">
+										Status
+									</th>
+									<th style="width: 5%; text-align: center">
+										Grade
+									</th>
+								</tr>
+								<tr class="">
+									<td>
+										1
+									</td>
+									<td>
+										A6915
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Edge Analytics
+									</td>
+									<td class="lightgrey">
+										30
+									</td>
+									<td>
+										29                                
+									</td>
+									<td class="lightgrey">
+										70
+									</td>
+									<td>
+										52
+									</td>
+									<td>
+										81
+									</td>
+									<td>
+										4
+									</td>
+									<td>
+										4                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										A+
+									</td>
+								</tr>
+								<tr class="">
+									<td>
+										2
+									</td>
+									<td>
+										A6217
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Cyber Security
+									</td>
+									<td class="lightgrey">
+										30
+									</td>
+									<td>
+										24                                
+									</td>
+									<td class="lightgrey">
+										70
+									</td>
+									<td>
+										44
+									</td>
+									<td>
+										68
+									</td>
+									<td>
+										3
+									</td>
+									<td>
+										3                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										B+
+									</td>
+								</tr>
+								<tr class="">
+									<td>
+										3
+									</td>
+									<td>
+										A1217
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Machine Learning
+									</td>
+									<td class="lightgrey">
+										30
+									</td>
+									<td>
+										28                                
+									</td>
+									<td class="lightgrey">
+										70
+									</td>
+									<td>
+										36
+									</td>
+									<td>
+										64
+									</td>
+									<td>
+										3
+									</td>
+									<td>
+										3                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										B+
+									</td>
+								</tr>
+								<tr class="">
+									<td>
+										4
+									</td>
+									<td>
+										A1231
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Software Project Management
+									</td>
+									<td class="lightgrey">
+										30
+									</td>
+									<td>
+										28                                
+									</td>
+									<td class="lightgrey">
+										70
+									</td>
+									<td>
+										32
+									</td>
+									<td>
+										60
+									</td>
+									<td>
+										3
+									</td>
+									<td>
+										3                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										B+
+									</td>
+								</tr>
+								<tr class="">
+									<td>
+										5
+									</td>
+									<td>
+										A0557
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Human Computer Interaction
+									</td>
+									<td class="lightgrey">
+										30
+									</td>
+									<td>
+										29                                
+									</td>
+									<td class="lightgrey">
+										70
+									</td>
+									<td>
+										45
+									</td>
+									<td>
+										74
+									</td>
+									<td>
+										3
+									</td>
+									<td>
+										3                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										A
+									</td>
+								</tr>
+								<tr class="">
+									<td>
+										6
+									</td>
+									<td>
+										A0363
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Renewable Energy  Source
+									</td>
+									<td class="lightgrey">
+										30
+									</td>
+									<td>
+										26                                
+									</td>
+									<td class="lightgrey">
+										70
+									</td>
+									<td>
+										51
+									</td>
+									<td>
+										77
+									</td>
+									<td>
+										3
+									</td>
+									<td>
+										3                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										A
+									</td>
+								</tr>
+								<tr class="">
+									<td>
+										7
+									</td>
+									<td>
+										A6916
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Edge Analytics Lab
+									</td>
+									<td class="lightgrey">
+										30
+									</td>
+									<td>
+										28                                
+									</td>
+									<td class="lightgrey">
+										70
+									</td>
+									<td>
+										66
+									</td>
+									<td>
+										94
+									</td>
+									<td>
+										1.5
+									</td>
+									<td>
+										1.5                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										O
+									</td>
+								</tr>
+								<tr class="">
+									<td>
+										8
+									</td>
+									<td>
+										A1215
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Machine Learning Lab
+									</td>
+									<td class="lightgrey">
+										30
+									</td>
+									<td>
+										30                                
+									</td>
+									<td class="lightgrey">
+										70
+									</td>
+									<td>
+										70
+									</td>
+									<td>
+										100
+									</td>
+									<td>
+										1.5
+									</td>
+									<td>
+										1.5                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										O
+									</td>
+								</tr>
+								<tr class="">
+									<td>
+										9
+									</td>
+									<td>
+										A00P1
+									</td>
+									<td style="text-align:left; font-weight:bold">
+										Internship / Mini Project
+									</td>
+									<td class="lightgrey">
+										100
+									</td>
+									<td>
+										0                                
+									</td>
+									<td class="lightgrey">
+									</td>
+									<td>
+										97
+									</td>
+									<td>
+										97
+									</td>
+									<td>
+										2
+									</td>
+									<td>
+										2                                
+									</td>
+									<td class="resultcell">
+										Pass
+									</td>
+									<td class="lightbrown">
+										O
+									</td>
+								</tr>
+								<tr>
+									<td>
+									</td>
+									<td>
+									</td>
+									<td style="text-align:right; font-weight:bold; padding-right:15px">
+										Total
+									</td>
+									<td>
+										340
+									</td>
+									<td>
+										222
+									</td>
+									<td>
+										560
+									</td>
+									<td style="width: 5%; text-align: center">
+										493
+									</td>
+									<td>
+										715
+									</td>
+									<td>
+										24
+									</td>
+									<td>
+										24
+									</td>
+									<td>
+									</td>
+									<td>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="6" style="font-weight:bold; text-align:left">
+										Percentage of Marks: 79.44
+									</td>
+									<td colspan="6" style="font-weight:bold; text-align:right; padding-right:15px">
+										<div style="display:inline"> SGPA: </div>
+										<div id="sgpa_20J41A6946" style="display:inline"></div>
+									</td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td style="border:0px; width:80px; text-align:left">CIE*</td>
+									<td style="border:0px; text-align:left">Continuous Internal Evaluation</td>
+								</tr>
+								<tr>
+									<td style="border:0px;text-align:left">SEE*</td>
+									<td style="border:0px; text-align:left">Semester End Examination</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<script>
+						var studentid = '20J41A6946';
+						var total = 715;
+						    var totalmax = 900;
+						var totalgradepoints = 197;
+						var totalcredits = 24;
+						var totalactcredits = 24;
+						var totalsubjects = 9;
+						var totalsubjectsp = 9;
+						var totalsubjectsf = totalsubjects - totalsubjectsp;
+						
+						$("#marksobtained_" + studentid).html(total + "\/" + totalmax);
+						$("#creditsobtained_" + studentid).html(totalcredits + "\/" + totalactcredits);
+						$("#subjectdue_" + studentid).html(totalsubjectsf + "\/" + totalsubjects)
+						var sgpa = (totalgradepoints / totalactcredits).roundTo(2).toFixed(2);
+						//  $("#cgpa_" + studentid).html(sgpa);
+						$("#sgpa_" + studentid).html(sgpa);
+					</script>
+				</div>
+			</div>
+			<script>
+				calls = [];
+				function validate() {
+				
+				    var RollNo = $("#RollNo").val();
+				   var req = $.ajax({
+				       type: "POST",
+				       async:false,
+				       url: "/Register/ValidateRollNo",
+				       data: { RollNo: RollNo },
+				
+				       success: function (data) {
+				           if (data == "blocked") {
+				               message = '<div style="border:solid 1px red;color:red; font-weight:bold; padding:10px; background-color:orange; text-align:center">';
+				               message += 'You are Informed to Contact Department Head for future Proceedings';
+				               message += '</div>';
+				               $("#ErrorMessage").html(message);
+				               isblocked = false;
+				           }
+				           else if (data == "notfound") {
+				               message = '<div style="border:solid 1px red;color:red; font-weight:bold; padding:10px; background-color:orange; text-align:center">';
+				               message += 'Invalid Roll No! Please Give Correct Roll No and Try Again!';
+				               message += '</div>';
+				               $("#RollNo").css("border","1px solid red");
+				               $("#ErrorMessage").html(message);
+				               isblocked = false;
+				
+				           }
+				           else if (data == "notblocked") {
+				               isblocked = true;
+				           }
+				           // var dates = data.split("###");
+				            //alert(dates[3]);
+				           // if($.trim(dates[3])==assignmentdate)
+				           // {
+				          //      alert('Already Assignment Created on this Date');
+				          //  }
+				           // else
+				          //  {
+				
+				          //      $("#AssignmentSubmissionDate").val($.trim(dates[0]));
+				           //     $("#AssignmentPublishingResultsDate").val($.trim(dates[1]));
+				           //     $("#AssignmentAuditingDate").val($.trim(dates[2]));
+				                //alert(dates[2]);
+				           // }
+				            //do something
+				        },
+				        error: function (error) {
+				            alert(error);
+				            //log error
+				        }
+				    });
+				    calls.push(req);
+				  return isblocked;
+				}
+				function ShowAlert() {
+				    alert("New Registrations are Stopped");
+				    }
+				
+				   
+			</script>
+			<footer style="text-align:center; width:max-content; margin:0px auto" class="no-print">
+				<p>&copy; 2024 - Malla Reddy Engineering College</p>
+			</footer>
+		</div>
+		<!-- Scripts / CSS References from jQuery CDN -->
+		<script src="/bundles/bootstrap?v=Rc0g6GDBha0U2Ue5txisObdTUK1i4R1sOhOsbTe7GyM1"></script>
+		<script src="/bundles/jqueryval?v=nsOwUc2j3GMqgidS30eLgZVJeHn83Wqmm2vMD4cUlKA1"></script>
+		<!-- Bootstrap core JavaScript-->
+		<!-- jQuery -->
+		<!-- Bootstrap Core JavaScript -->
+		<!-- Metis Menu Plugin JavaScript -->
+		<!-- <script src="~/vendor/metisMenu/metisMenu.min.js"></script>-->
+		<!-- Morris Charts JavaScript -->
+		<script src="/Scripts/jquery-ui-1.11.4.js"></script>
+		<!-- Custom Theme JavaScript -->
+		<script>var $oldjQuery = $.noConflict(true);</script>
+		<script>var calls = [];</script>
+	</body>
+</html>
